@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import useGameStore from '../store/gameStore';
-import gameData from '../gameData.json';
 
 const Hotspot = ({ hotspot }) => {
   const [isHovered, setIsHovered] = useState(false);
