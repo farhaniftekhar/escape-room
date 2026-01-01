@@ -26,23 +26,23 @@ const InventoryBar = () => {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ delay: 0.5, duration: 0.5 }}
-      className="absolute bottom-0 left-0 right-0 h-24 glassmorphism flex items-center justify-between px-8"
+      className="absolute bottom-0 left-0 right-0 h-16 glassmorphism flex items-center justify-between px-6"
     >
       {/* Timer */}
-      <div className="flex items-center gap-3">
-        <Timer className="w-6 h-6 text-mystery-gold" />
+      <div className="flex items-center gap-2">
+        <Timer className="w-5 h-5 text-mystery-gold" />
         <div>
-          <p className="font-orbitron text-xs text-mystery-silver">Time Elapsed</p>
-          <p className="font-orbitron text-xl text-mystery-gold font-bold">
+          <p className="font-orbitron text-xs text-mystery-silver">Time</p>
+          <p className="font-orbitron text-lg text-mystery-gold font-bold">
             {formatTime(elapsedTime)}
           </p>
         </div>
       </div>
 
       {/* Inventory */}
-      <div className="flex-1 flex items-center justify-center gap-4 px-8">
-        <PackageOpen className="w-6 h-6 text-mystery-gold" />
-        <p className="font-orbitron text-sm text-mystery-silver">Inventory:</p>
+      <div className="flex-1 flex items-center justify-center gap-3 px-6">
+        <PackageOpen className="w-5 h-5 text-mystery-gold" />
+        <p className="font-orbitron text-xs text-mystery-silver">Inventory:</p>
         
         <div className="flex gap-3">
           <AnimatePresence>
@@ -66,7 +66,7 @@ const InventoryBar = () => {
                     animate={{ scale: 1, rotate: 0 }}
                     exit={{ scale: 0, rotate: 180 }}
                     transition={{ delay: index * 0.1 }}
-                    className="glassmorphism px-4 py-2 rounded-lg border border-mystery-gold hover:bg-mystery-purple transition-all cursor-pointer group"
+                    className="glassmorphism px-3 py-1.5 rounded-lg border border-mystery-gold hover:bg-mystery-purple transition-all cursor-pointer group"
                     title={item?.description || item?.name}
                   >
                     <p className="font-orbitron text-sm text-mystery-gold group-hover:text-white">

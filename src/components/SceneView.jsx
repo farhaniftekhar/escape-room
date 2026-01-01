@@ -54,12 +54,12 @@ const SceneView = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="absolute top-8 left-1/2 transform -translate-x-1/2 text-center"
+        className="absolute top-4 left-1/2 transform -translate-x-1/2 text-center"
       >
-        <h2 className="font-cinzel text-3xl text-mystery-gold drop-shadow-lg">
+        <h2 className="font-cinzel text-2xl text-mystery-gold drop-shadow-lg">
           {scene.name}
         </h2>
-        <p className="font-orbitron text-sm text-mystery-silver mt-2 opacity-80">
+        <p className="font-orbitron text-xs text-mystery-silver mt-1 opacity-80">
           {scene.description}
         </p>
       </motion.div>
