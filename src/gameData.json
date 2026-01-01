@@ -1,0 +1,115 @@
+{
+  "scenes": {
+    "lockedStudy": {
+      "id": "lockedStudy",
+      "name": "Locked Study Room",
+      "background": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1920&h=1080&fit=crop",
+      "description": "You find yourself in a dimly lit study room. The door is locked, and you must find a way to escape.",
+      "hotspots": [
+        {
+          "id": "desk",
+          "type": "puzzle",
+          "x": 45,
+          "y": 55,
+          "width": 15,
+          "height": 20,
+          "label": "Desk",
+          "hoverText": "Examine the desk",
+          "puzzleId": "deskKeypad"
+        },
+        {
+          "id": "bookshelf",
+          "type": "item",
+          "x": 15,
+          "y": 30,
+          "width": 12,
+          "height": 40,
+          "label": "Bookshelf",
+          "hoverText": "Search the bookshelf",
+          "itemId": "oldKey",
+          "message": "You found an old key!"
+        },
+        {
+          "id": "door",
+          "type": "navigation",
+          "x": 75,
+          "y": 25,
+          "width": 10,
+          "height": 35,
+          "label": "Door",
+          "hoverText": "Try to open the door",
+          "requiredItem": "masterKey",
+          "targetScene": "hallway",
+          "lockedMessage": "The door is locked. You need a key."
+        },
+        {
+          "id": "painting",
+          "type": "clue",
+          "x": 70,
+          "y": 10,
+          "width": 8,
+          "height": 12,
+          "label": "Painting",
+          "hoverText": "Examine the painting",
+          "clueText": "Behind the painting, you notice numbers scratched into the wall: 7-3-9-2"
+        }
+      ]
+    },
+    "hallway": {
+      "id": "hallway",
+      "name": "Hallway",
+      "background": "https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1920&h=1080&fit=crop",
+      "description": "You've escaped the study! The hallway stretches before you.",
+      "hotspots": [
+        {
+          "id": "exitDoor",
+          "type": "win",
+          "x": 50,
+          "y": 40,
+          "width": 12,
+          "height": 25,
+          "label": "Exit",
+          "hoverText": "Freedom awaits!",
+          "message": "Congratulations! You've escaped the room!"
+        }
+      ]
+    }
+  },
+  "puzzles": {
+    "deskKeypad": {
+      "id": "deskKeypad",
+      "type": "keypad",
+      "title": "Desk Drawer Lock",
+      "description": "Enter the 4-digit code to unlock the drawer.",
+      "solution": "7392",
+      "reward": {
+        "type": "item",
+        "itemId": "masterKey"
+      },
+      "successMessage": "The drawer opens! You found the master key!",
+      "failMessage": "Incorrect code. Try again."
+    }
+  },
+  "items": {
+    "oldKey": {
+      "id": "oldKey",
+      "name": "Old Key",
+      "description": "An old rusty key. Might be useful somewhere.",
+      "icon": "key"
+    },
+    "masterKey": {
+      "id": "masterKey",
+      "name": "Master Key",
+      "description": "A shiny master key. This should open the door!",
+      "icon": "key-round"
+    }
+  },
+  "initialState": {
+    "currentScene": "lockedStudy",
+    "inventory": [],
+    "solvedPuzzles": [],
+    "discoveredClues": [],
+    "startTime": null,
+    "gameWon": false
+  }
+}
